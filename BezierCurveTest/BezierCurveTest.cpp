@@ -43,13 +43,18 @@ int main()
 
     std::vector<sf::CircleShape> bezierCurve;
 
+
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 16;
+
     // create the window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window", sf::Style::Default, settings);
     window.setFramerateLimit(60);
 
     // run the program as long as the window is open
     while (window.isOpen())
     {
+        // settings.antialiasingLevel = 8;
         window.setFramerateLimit(60);
 
         // check all the window's events that were triggered since the last iteration of the loop
